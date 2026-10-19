@@ -18,7 +18,7 @@ root=Path(__file__).resolve().parent
 out=root/'build/tests'
 out.mkdir(parents=True,exist_ok=True)
 source=(root/'src/fix.cpp').read_text()
-(out/'adapter-under-test.inc').write_text(source[source.index('using Callback='):source.index('static int memory_protection(')])
+(out/'adapter-under-test.inc').write_text(source[source.index('using Callback'):source.index('static int memory_protection(')])
 compiler=[args.compiler,'-std=c++17','-O0','-Wall','-Wextra','-Werror','-Wno-unused-function','-Wno-unused-variable','-I',str(root/'src'),'-I',str(out)]
 def compile_test(name,extra=(),flags=()):
     target=out/(name+('-quiet' if flags else '')+('.exe' if os.name=='nt' else ''))
@@ -35,7 +35,7 @@ if args.update_signatures:
         for role,line in zip(roles,result.splitlines()): signatures[role].add(tuple(map(int,line.split())))
     lines=['#pragma once','#include "locator.h"','','namespace sky {','inline constexpr Fingerprint signatures[]={']
     for role in roles:
-        lines += ['    {%d,0x%016xULL,0x%016xULL,%s},'%(*s,role) for s in sorted(signatures[role])]
+        lines += ['    {0x%016xULL,0x%016xULL,%d,%s},'%(s[1],s[2],s[0],role) for s in sorted(signatures[role])]
     lines+=['};','}','']
     (root/'src/signatures.h').write_text('\n'.join(lines))
     print('Signatures regenerated from fixtures; rerun tests')

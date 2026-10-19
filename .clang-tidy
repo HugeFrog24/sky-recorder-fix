@@ -1,0 +1,34 @@
+Checks: >-
+  -*,
+  clang-analyzer-*,
+  bugprone-*,
+  cert-*,
+  concurrency-*,
+  misc-*,
+  performance-*,
+  -performance-no-int-to-ptr,
+  portability-*,
+  modernize-*,
+  readability-*,
+  -bugprone-easily-swappable-parameters,
+  -misc-include-cleaner,
+  -misc-use-anonymous-namespace,
+  -modernize-avoid-c-arrays,
+  -modernize-use-auto,
+  -modernize-use-trailing-return-type,
+  -readability-function-cognitive-complexity,
+  -readability-function-size,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -readability-named-parameter
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+SystemHeaders: false
+FormatStyle: none
+CheckOptions:
+  misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: true
+  misc-const-correctness.TransformPointersAsPointers: false
+  misc-const-correctness.WarnPointersAsPointers: false
+  bugprone-assert-side-effect.CheckFunctionCalls: false
+  readability-implicit-bool-conversion.AllowIntegerConditions: true
+  readability-implicit-bool-conversion.AllowPointerConditions: true

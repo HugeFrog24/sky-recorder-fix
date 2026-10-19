@@ -50,6 +50,7 @@ if(NOT ANDROID OR NOT ANDROID_ABI STREQUAL "arm64-v8a")
     message(FATAL_ERROR "This module requires Android arm64-v8a.")
 endif()
 option(SKY_RECORDER_TRACE "Enable recorder diagnostics" OFF)
+option(SKY_RECORDER_LINT "Enable strict clang-tidy checks" OFF)
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
 endif()
@@ -68,3 +69,34 @@ add_custom_command(TARGET sky_recorder_fix POST_BUILD
         --add-section ".config=${CMAKE_CURRENT_SOURCE_DIR}/config.json"
         --set-section-flags .config=readonly "$<TARGET_FILE:sky_recorder_fix>"
     VERBATIM)
+
+if(SKY_RECORDER_LINT)
+    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+    get_filename_component(llvm_bin "${CMAKE_CXX_COMPILER}" DIRECTORY)
+    find_program(CLANG_TIDY NAMES clang-tidy HINTS "${llvm_bin}" REQUIRED)
+    file(READ "${CMAKE_CURRENT_SOURCE_DIR}/src/fix.cpp" adapter_source)
+    string(FIND "${adapter_source}" "using Callback" adapter_start)
+    string(FIND "${adapter_source}" "static int memory_protection(" adapter_end)
+    if(adapter_start LESS 0 OR adapter_end LESS adapter_start)
+        message(FATAL_ERROR "Cannot extract the production adapter for linting.")
+    endif()
+    math(EXPR adapter_length "${adapter_end}-${adapter_start}")
+    string(SUBSTRING "${adapter_source}" ${adapter_start} ${adapter_length} adapter_source)
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/adapter-under-test.inc" "${adapter_source}")
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS src/fix.cpp)
+    add_library(lint_tests OBJECT EXCLUDE_FROM_ALL tests/test_adapter.cpp tests/test_locator.cpp)
+    set_target_properties(lint_tests PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED YES CXX_EXTENSIONS NO)
+    target_include_directories(lint_tests PRIVATE src "${CMAKE_CURRENT_BINARY_DIR}")
+    target_compile_options(lint_tests PRIVATE -UNDEBUG)
+    add_custom_target(lint
+        COMMAND "${CLANG_TIDY}" --verify-config
+        COMMAND "${CLANG_TIDY}" -p "${CMAKE_BINARY_DIR}" src/locator.cpp tests/test_locator.cpp
+        COMMAND "${CLANG_TIDY}" -p "${CMAKE_BINARY_DIR}" src/fix.cpp
+            --extra-arg=-USKY_RECORDER_TRACE --extra-arg=-DSKY_RECORDER_TRACE=0
+        COMMAND "${CLANG_TIDY}" -p "${CMAKE_BINARY_DIR}" src/fix.cpp
+            --extra-arg=-USKY_RECORDER_TRACE --extra-arg=-DSKY_RECORDER_TRACE=1
+        COMMAND "${CLANG_TIDY}" -p "${CMAKE_BINARY_DIR}" tests/test_adapter.cpp --extra-arg=-DTEST_TRACE=0
+        COMMAND "${CLANG_TIDY}" -p "${CMAKE_BINARY_DIR}" tests/test_adapter.cpp --extra-arg=-DTEST_TRACE=1
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+        VERBATIM)
+endif()
