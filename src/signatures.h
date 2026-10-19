@@ -1,0 +1,40 @@
+#pragma once
+#include "locator.h"
+
+namespace sky {
+inline constexpr Fingerprint signatures[]={
+    {1272,0x1fddcd0e9c785971ULL,0xb6a851d032a72eeeULL,Pixels},
+    {1272,0x380b95bb7ecdc531ULL,0x108b5e093bccdfd7ULL,Pixels},
+    {1272,0x3a9137d9ac69c171ULL,0xa5fbcf0789263cd2ULL,Pixels},
+    {1272,0xb87c9c25c42fbf31ULL,0x60784a79e512b37aULL,Pixels},
+    {1652,0x4526bf2ad0ae223cULL,0x55a2a0fd44373e72ULL,End},
+    {1652,0xe18033f8afab4a3cULL,0x2dc78aae9def2926ULL,End},
+    {1680,0x22e5c17c204cc957ULL,0x2439b991b844a5abULL,End},
+    {1680,0x32c334fbdb78e157ULL,0xfde68b57248389ceULL,End},
+    {1936,0x12b2e7eeabf3bbd9ULL,0x4bbb7ea218f275ffULL,End},
+    {1936,0x672a10a82a83cbd9ULL,0x27b40ffbea1141a9ULL,End},
+    {1936,0x6b442182081767f9ULL,0xf2a407389ae9aee3ULL,End},
+    {1936,0x84192e4f6b0d33d9ULL,0x7ab7aeeae128c341ULL,End},
+    {2356,0x2b064bac02cef90cULL,0x7730aba90f0eb552ULL,End},
+    {2356,0x7c896c3ace81f90cULL,0xf7dba14d4db36258ULL,End},
+    {2356,0xc9db528742ace90cULL,0x81c38ea70be40aafULL,End},
+    {1240,0x11ea7e0f668064daULL,0x3b7c61eb9f2496b4ULL,Begin},
+    {1240,0x5ba2c1bafbe5c1baULL,0x25e6f9bc08ea34deULL,Begin},
+    {1240,0x63c082d8fcf541baULL,0xe045fbf5cf55a113ULL,Begin},
+    {1240,0x68987ace4bf3ca3aULL,0x39fae3a231f21da6ULL,Begin},
+    {1240,0x89a6de285fcd24daULL,0x5506333c86548252ULL,Begin},
+    {1240,0x8a9c7a1d1033f4daULL,0x3486e5faef4cd6dcULL,Begin},
+    {1240,0xb0c0ce1437e044daULL,0x9c529312404a1c66ULL,Begin},
+    {1240,0xfa53b69711299a3aULL,0x848c2a04c8ba3962ULL,Begin},
+    {1476,0x57e35734410a1e06ULL,0xfd29c358c2ee10beULL,Begin},
+    {1476,0x74fb731641b28e06ULL,0x2786c57dbfa4e446ULL,Begin},
+    {1476,0xad426de715c99e06ULL,0x24022dca4f59346cULL,Begin},
+    {336,0x55cad6031d241c47ULL,0x5a8fca69611232feULL,Complete},
+    {352,0x2b092378fa3f91beULL,0xd713a88fc908eb70ULL,Complete},
+    {164,0xb68b42996741ff88ULL,0x630f0807ead3f507ULL,Register},
+    {284,0x56a4bd9311142868ULL,0x2d99b50bb9d77c8aULL,Callback},
+    {284,0x6281513035caa868ULL,0x3517649250c166b8ULL,Callback},
+    {284,0xf5c4f22386570c68ULL,0x8122d28cb50e0733ULL,Callback},
+    {316,0xebdae0f1efa3d881ULL,0xbe6e8d32e6d6d57aULL,PassPool},
+};
+}

@@ -1,0 +1,313 @@
+[
+  {
+    "file": "libBootloader-Huawei-0.33.5-390271.so",
+    "sha256": "9fbac2678d19f498feeb0377ef56bb5427bd13607a21a8b03887a2a729e28868",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13118164,
+      13157328,
+      13113952,
+      13106516,
+      13086496,
+      20007460,
+      13288680
+    ],
+    "slots": [
+      43068064,
+      43067688,
+      43068416,
+      43067672,
+      43068464
+    ],
+    "renderer": 47220632,
+    "submit": 47222240,
+    "wait": 47222320,
+    "fixture": "Huawei-0.33.5-390271.elf"
+  },
+  {
+    "file": "libBootloader-Huawei-0.34.0-401861.so",
+    "sha256": "ed9fe2853cd33df9a5389ccc857a2e5d6e34df28d6f570cdaea373b631bcab24",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13833936,
+      13843132,
+      13756324,
+      13600384,
+      13623564,
+      21263504,
+      13889644
+    ],
+    "slots": [
+      45027952,
+      45027576,
+      45028304,
+      45027560,
+      45028352
+    ],
+    "renderer": 49365720,
+    "submit": 49367328,
+    "wait": 49367408,
+    "fixture": "Huawei-0.34.0-401861.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.11.0-155436.so",
+    "sha256": "925c3096e7af03d16b9dfc392b242714002e43f530e4ff9ee955fa183b8ab8d7",
+    "accepted": false,
+    "status": "unsupported_code_shape",
+    "functions": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "slots": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "renderer": 0,
+    "submit": 0,
+    "wait": 0
+  },
+  {
+    "file": "libBootloader-Live-0.33.0-381476.so",
+    "sha256": "3e9263e85c2ac6fb0cfcc55c025f504ca6e654f9fea063d93e731572eeeec7be",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      12815540,
+      12813888,
+      12937600,
+      12971348,
+      12965640,
+      19665124,
+      13067548
+    ],
+    "slots": [
+      42617400,
+      42617024,
+      42617776,
+      42617008,
+      42617824
+    ],
+    "renderer": 46686008,
+    "submit": 46687616,
+    "wait": 46687696,
+    "fixture": "Live-0.33.0-381476.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.33.2-384474.so",
+    "sha256": "e77c2a1909e0184e09cbf19b17c46001d9ab3441eb917a01151860aaabffe511",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      12803436,
+      12801784,
+      12925496,
+      12959244,
+      12953536,
+      19650764,
+      13055444
+    ],
+    "slots": [
+      42555920,
+      42555544,
+      42556296,
+      42555528,
+      42556344
+    ],
+    "renderer": 46624616,
+    "submit": 46626224,
+    "wait": 46626304,
+    "fixture": "Live-0.33.2-384474.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.33.7-394009.so",
+    "sha256": "d6eefa246b4a6658d2c8cc81ac57ac5381596e55844efe4c3d0435247304625f",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13122260,
+      13161424,
+      13118048,
+      13110612,
+      13090592,
+      20016404,
+      13292776
+    ],
+    "slots": [
+      43084432,
+      43084056,
+      43084784,
+      43084040,
+      43084832
+    ],
+    "renderer": 47237416,
+    "submit": 47239024,
+    "wait": 47239104,
+    "fixture": "Live-0.33.7-394009.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.33.8-399977.so",
+    "sha256": "4045fd05d663cd2faafda835d0636fb39b3c2bae2df8592c83199107b157dcfc",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13156236,
+      13195400,
+      13152024,
+      13144588,
+      13124568,
+      20394344,
+      13326752
+    ],
+    "slots": [
+      43469528,
+      43469152,
+      43469880,
+      43469136,
+      43469928
+    ],
+    "renderer": 47705624,
+    "submit": 47707232,
+    "wait": 47707312,
+    "fixture": "Live-0.33.8-399977.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.34.2-406253.so",
+    "sha256": "9be64e858a127a3a05c720b7efb34df5c144d1db9711767788ab0ca8e8fefc43",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13838112,
+      13847308,
+      13760500,
+      13604560,
+      13627740,
+      21276640,
+      13893820
+    ],
+    "slots": [
+      45044320,
+      45043944,
+      45044672,
+      45043928,
+      45044720
+    ],
+    "renderer": 49382312,
+    "submit": 49383920,
+    "wait": 49384000,
+    "fixture": "Live-0.34.2-406253.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.34.3-408160.so",
+    "sha256": "0d0b03b1a3f0397daf2c9a0fb00114102716266a2e16654b91c96ae87b94e31a",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13838112,
+      13847308,
+      13760500,
+      13604560,
+      13627740,
+      21276652,
+      13893820
+    ],
+    "slots": [
+      45044272,
+      45043896,
+      45044624,
+      45043880,
+      45044672
+    ],
+    "renderer": 49382344,
+    "submit": 49383952,
+    "wait": 49384032,
+    "fixture": "Live-0.34.3-408160.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.34.5-410941.so",
+    "sha256": "778b2e1d56c0fc2a47ee5b9db8b0384e65f70660dd4479a9578880c80958281f",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      13959228,
+      13968424,
+      13881616,
+      13725668,
+      13748848,
+      21496804,
+      14014936
+    ],
+    "slots": [
+      45560464,
+      45560088,
+      45560816,
+      45560072,
+      45560864
+    ],
+    "renderer": 49908320,
+    "submit": 49909928,
+    "wait": 49910008,
+    "fixture": "Live-0.34.5-410941.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.35.0-421155.so",
+    "sha256": "a89c5f51f7c454cad0e94563cae57282263f35dc3877023fbc5adf86609fe0ac",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      14104200,
+      14210392,
+      14245952,
+      14235868,
+      14172668,
+      21986020,
+      14363684
+    ],
+    "slots": [
+      46535320,
+      46534944,
+      46535696,
+      46534928,
+      46535744
+    ],
+    "renderer": 50976984,
+    "submit": 50978592,
+    "wait": 50978672,
+    "fixture": "Live-0.35.0-421155.elf"
+  },
+  {
+    "file": "libBootloader-Live-0.35.1-423272.so",
+    "sha256": "050408d96ef3dd803593ad958f677b16060f33dd9d89f2c2f48d7a1cb877e443",
+    "accepted": true,
+    "status": "accepted",
+    "functions": [
+      14104200,
+      14210392,
+      14245952,
+      14235868,
+      14172668,
+      21986020,
+      14363684
+    ],
+    "slots": [
+      46535336,
+      46534960,
+      46535712,
+      46534944,
+      46535760
+    ],
+    "renderer": 50977000,
+    "submit": 50978608,
+    "wait": 50978688,
+    "fixture": "Live-0.35.1-423272.elf"
+  }
+]
